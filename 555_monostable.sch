@@ -1,0 +1,260 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Timer:LM555xM U1
+U 1 1 60DB5E45
+P 6350 3600
+F 0 "U1" H 6750 4100 50  0000 C CNN
+F 1 "LM555xM" H 6600 4000 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 7200 3200 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm555.pdf" H 7200 3200 50  0001 C CNN
+F 4 "X" H 6350 3600 50  0001 C CNN "Spice_Primitive"
+F 5 "NE555" H 6350 3600 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 6350 3600 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "1 2 3 4 5 6 7 8 " H 6350 3600 50  0001 C CNN "Spice_Node_Sequence"
+F 8 "/home/jlaica/Dropbox/01_datos/Hardware/sim_555/NE555.lib" H 6350 3600 50  0001 C CNN "Spice_Lib_File"
+	1    6350 3600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L pspice:VSOURCE V1
+U 1 1 60DB7006
+P 3850 3600
+F 0 "V1" H 4078 3646 50  0000 L CNN
+F 1 "9" H 4078 3555 50  0000 L CNN
+F 2 "" H 3850 3600 50  0001 C CNN
+F 3 "~" H 3850 3600 50  0001 C CNN
+	1    3850 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND04
+U 1 1 60DB768D
+P 6350 4250
+F 0 "#GND04" H 6350 4150 50  0001 C CNN
+F 1 "0" H 6350 4339 50  0000 C CNN
+F 2 "" H 6350 4250 50  0001 C CNN
+F 3 "~" H 6350 4250 50  0001 C CNN
+	1    6350 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 4000 6350 4250
+Text GLabel 6050 2850 0    50   Input ~ 0
+Vcc
+Text GLabel 4000 3100 2    50   Input ~ 0
+Vcc
+Wire Wire Line
+	4000 3100 3850 3100
+Wire Wire Line
+	3850 3100 3850 3300
+$Comp
+L pspice:0 #GND02
+U 1 1 60DB828E
+P 3850 4150
+F 0 "#GND02" H 3850 4050 50  0001 C CNN
+F 1 "0" H 3850 4239 50  0000 C CNN
+F 2 "" H 3850 4150 50  0001 C CNN
+F 3 "~" H 3850 4150 50  0001 C CNN
+	1    3850 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3850 4150 3850 3900
+Wire Wire Line
+	6350 3200 6350 2850
+Wire Wire Line
+	6350 2850 6050 2850
+$Comp
+L Device:R R1
+U 1 1 60DBAA8F
+P 5000 3300
+F 0 "R1" H 5070 3346 50  0000 L CNN
+F 1 "47k" H 5070 3255 50  0000 L CNN
+F 2 "" V 4930 3300 50  0001 C CNN
+F 3 "~" H 5000 3300 50  0001 C CNN
+	1    5000 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:C C1
+U 1 1 60DBB966
+P 5000 4000
+F 0 "C1" H 5178 4046 50  0000 L CNN
+F 1 "10uf" H 5178 3955 50  0000 L CNN
+F 2 "" H 5000 4000 50  0001 C CNN
+F 3 "~" H 5000 4000 50  0001 C CNN
+	1    5000 4000
+	1    0    0    -1  
+$EndComp
+Text GLabel 4800 3000 0    50   Input ~ 0
+Vcc
+Wire Wire Line
+	4800 3000 5000 3000
+Wire Wire Line
+	5000 3000 5000 3150
+Wire Wire Line
+	5850 3600 5700 3600
+Wire Wire Line
+	5700 3600 5700 3800
+Wire Wire Line
+	5700 3800 5850 3800
+Wire Wire Line
+	5000 3450 5000 3600
+Wire Wire Line
+	5700 3600 5000 3600
+Connection ~ 5700 3600
+Connection ~ 5000 3600
+Wire Wire Line
+	5000 3600 5000 3750
+$Comp
+L pspice:0 #GND03
+U 1 1 60DBDB56
+P 5000 4500
+F 0 "#GND03" H 5000 4400 50  0001 C CNN
+F 1 "0" H 5000 4589 50  0000 C CNN
+F 2 "" H 5000 4500 50  0001 C CNN
+F 3 "~" H 5000 4500 50  0001 C CNN
+	1    5000 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 4250 5000 4500
+$Comp
+L pspice:C C2
+U 1 1 60DBE71F
+P 7650 3950
+F 0 "C2" H 7828 3996 50  0000 L CNN
+F 1 "100nf" H 7828 3905 50  0000 L CNN
+F 2 "" H 7650 3950 50  0001 C CNN
+F 3 "~" H 7650 3950 50  0001 C CNN
+	1    7650 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND05
+U 1 1 60DBF5B1
+P 7650 4500
+F 0 "#GND05" H 7650 4400 50  0001 C CNN
+F 1 "0" H 7650 4589 50  0000 C CNN
+F 2 "" H 7650 4500 50  0001 C CNN
+F 3 "~" H 7650 4500 50  0001 C CNN
+	1    7650 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7650 4200 7650 4500
+Text GLabel 5650 3400 0    50   Input ~ 0
+Vout
+Wire Wire Line
+	5650 3400 5850 3400
+$Comp
+L Device:R R2
+U 1 1 60DC09EE
+P 6400 5600
+F 0 "R2" H 6470 5646 50  0000 L CNN
+F 1 "100k" H 6470 5555 50  0000 L CNN
+F 2 "" V 6330 5600 50  0001 C CNN
+F 3 "~" H 6400 5600 50  0001 C CNN
+	1    6400 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND06
+U 1 1 60DC0E54
+P 6400 6050
+F 0 "#GND06" H 6400 5950 50  0001 C CNN
+F 1 "0" H 6400 6139 50  0000 C CNN
+F 2 "" H 6400 6050 50  0001 C CNN
+F 3 "~" H 6400 6050 50  0001 C CNN
+	1    6400 6050
+	1    0    0    -1  
+$EndComp
+Text GLabel 6150 5250 0    50   Input ~ 0
+Vout
+Wire Wire Line
+	6150 5250 6400 5250
+Wire Wire Line
+	6400 5250 6400 5450
+Wire Wire Line
+	6400 5750 6400 6050
+$Comp
+L pspice:VSOURCE vpulse1
+U 1 1 60DC638D
+P 2700 5600
+F 0 "vpulse1" H 2928 5646 50  0000 L CNN
+F 1 "PULSE ( 9 0 10US 2NS 2NS 100us 0 0 )" H 2928 5555 50  0000 L CNN
+F 2 "" H 2700 5600 50  0001 C CNN
+F 3 "~" H 2700 5600 50  0001 C CNN
+	1    2700 5600
+	1    0    0    -1  
+$EndComp
+Text GLabel 8450 3400 2    50   Input ~ 0
+pulse
+Wire Wire Line
+	6850 3600 7650 3600
+Wire Wire Line
+	7650 3600 7650 3700
+$Comp
+L pspice:0 #GND01
+U 1 1 60DCA82B
+P 2700 6200
+F 0 "#GND01" H 2700 6100 50  0001 C CNN
+F 1 "0" H 2700 6289 50  0000 C CNN
+F 2 "" H 2700 6200 50  0001 C CNN
+F 3 "~" H 2700 6200 50  0001 C CNN
+	1    2700 6200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 5900 2700 6200
+Text GLabel 3050 5000 2    50   Input ~ 0
+pulse
+Wire Wire Line
+	3050 5000 2700 5000
+Wire Wire Line
+	2700 5000 2700 5300
+$Comp
+L Device:R R3
+U 1 1 60DD3CD7
+P 8300 3050
+F 0 "R3" H 8370 3096 50  0000 L CNN
+F 1 "22k" H 8370 3005 50  0000 L CNN
+F 2 "" V 8230 3050 50  0001 C CNN
+F 3 "~" H 8300 3050 50  0001 C CNN
+	1    8300 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 3400 8300 3400
+Wire Wire Line
+	6850 3800 7200 3800
+Wire Wire Line
+	7200 3800 7200 2850
+Wire Wire Line
+	7200 2850 6350 2850
+Connection ~ 6350 2850
+Wire Wire Line
+	8300 3200 8300 3400
+Wire Wire Line
+	8450 3400 8300 3400
+Connection ~ 8300 3400
+Wire Wire Line
+	7200 2850 8300 2850
+Wire Wire Line
+	8300 2850 8300 2900
+Connection ~ 7200 2850
+$EndSCHEMATC
